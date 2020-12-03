@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" lang="de" xml:lang="de">
+  <head>
+    <title>Mondschein</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#559" />
+
+    <meta name="description" content="Eine Geschichte über eine äußere und innere Reise des Erwachsenwerdens. Über die Zerbrechlichkeit dessen, was wir als sicher erachten und die Beständigkeit dessen, was wir nie erwartet hätten. Über Freundschaft, Familie, Liebe und Intrigen, die Verarbeitung von Trauer und das Durchbrechen von festgefahrenen Denkmustern." />
+
+    <meta property="og:title" content="Mondschein" />
+    <meta property="og:description" content="Eine Geschichte über eine äußere und innere Reise des Erwachsenwerdens. Über die Zerbrechlichkeit dessen, was wir als sicher erachten und die Beständigkeit dessen, was wir nie erwartet hätten. Über Freundschaft, Familie, Liebe und Intrigen, die Verarbeitung von Trauer und das Durchbrechen von festgefahrenen Denkmustern." />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content="https://mondschein-saga.de/" />
+    <meta property="og:image" content="moon-192.png" />
+
+    <link rel="canonical" href="https://mondschein-saga.de/" />
+
+    <link rel="preload" href="title.svg" as="image" />
+    <link rel="preload" href="moon.svg" as="image" />
+    <link rel="preload" href="rule.svg" as="image" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!--
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&amp;display=swap" rel="stylesheet" />
+    -->
+
+    <link rel="apple-touch-icon" sizes="192x192" href="moon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="moon-180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="moon-167.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="moon-152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="moon-144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="moon-120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="moon-114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="moon-76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="moon-72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="moon-60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="moon-57.png" />
+    <link rel="icon" sizes="192x192" href="moon-192.png" />
+    <link rel="icon" sizes="128x128" href="moon-128.png" />
+    <link rel="icon" sizes="96x96" href="moon-96.png" />
+    <link rel="icon" sizes="64x64" href="moon-64.png" />
+    <link rel="icon" sizes="48x48" href="moon-48.png" />
+    <link rel="icon" sizes="32x32" href="moon-32.png" />
+    <link rel="icon" sizes="16x16" href="moon-16.png" />
+
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|EB+Garamond:400,400i");
+
+      /**** document ****/
+
+      ::selection {
+        color: white;
+        background: #559;
+      }
+
+      html {
+                                                                      heightXXXXXX: 100%;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+      }
+
+      body {
+                                                                      positionXXXXXX: relative;
+                                                                      heightXXXXXX: 100%;
+        padding: 0;
+        margin: 0;
+        background: #eef;
+        background: linear-gradient(#eef9, #eef9), url(clouds.jpg) #eef;
+      }
+
+      /*
+      body::after {
+        content: '';
+        display: block;
+        width: 648px;
+        height: 648px;
+        background: url('silver.png') center/100%;
+        position: fixed;
+        bottom: 0;
+        right: -320px;
+        z-index: 2;
+        transition: margin-left 0.8s ease;
+        animation: 5s ease fadein backwards;
+      }
+
+      body::after:hover {
+        background: url('silver-moon.png') center/100%, url('silver.png') center/100%;
+      }
+      */
+
+      head {
+        display: block;
+        margin: 0;
+        padding: 0;
+        height: 0;
+        width: 0;
+      }
+
+      head * {
+        display: none;
+      }
+
+      head meta:nth-of-type(1), head meta:nth-of-type(2) {
+        display: block;
+        width: 648px;
+        height: 648px;
+        position: fixed;
+        bottom: 0;
+        right: -320px;
+        z-index: 2;
+        transition: opacity 2s ease, margin-left 0.8s ease;
+        animation: 5s ease silverfadein backwards;
+      }
+
+      head meta:nth-of-type(1) {
+        background: url('silver.png') center/100%;
+      }
+
+      head meta:nth-of-type(2) {
+        background: url('silver-moon-eyes.png') center/100%;
+        opacity: 0;
+      }
+
+      head meta:nth-of-type(2):hover {
+        opacity: 1;
+      }
+
+      body::before {
+        content: '';
+        position: absolute;
+        background: linear-gradient(#0008, #0000);
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 150vh;
+        visibility: hidden;
+        animation: 5s ease fadeout backwards;
+      }
+
+      @media (max-height: 568px)
+      {
+        head meta:nth-of-type(1), head meta:nth-of-type(2) {
+          bottom: auto;
+          top: -80px;
+        }
+      }
+
+
+      /**** header and intro animation ****/
+
+      header {
+        position: relative;
+        height: 20em;
+        margin: 0 0 15em 0;
+        padding: 0;
+        background: url(clouds.jpg) fixed #669;
+        box-shadow: 0 -50px 100px #0004 inset, 0 10px 200px #0004;
+        z-index: 1;
+      }
+
+      header::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.3em;
+        height: 0.6em;
+        background: url(rule.svg) repeat-x center/110em 0.6em;
+      }
+
+      header::before {
+        content: '';
+        position: absolute;
+        background: #0008;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        visibility: hidden;
+        animation: 5s ease fadeout backwards;
+      }
+
+      h1 {
+        font-size: 1em;
+        color: transparent;
+        position: relative;
+        top: 10.2em;
+        margin: 0 auto;
+        padding: 10em 0 0 10em;
+        width: 20em;
+        height: 10em;
+        transition: top 0.3s ease, font-size 0.3s ease;
+        animation: 2s ease fontsizefix backwards;
+      }
+
+      h1::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 5em;
+        height: 20em;
+        width: 20em;
+        background: url(moon.svg) no-repeat center/contain;
+        border-radius: 9.85em;
+        box-shadow: 0 0 0 #2220 inset;
+        transition: box-shadow 1s ease;
+        animation: 5s ease moonfadein backwards;
+      }
+
+      h1:hover::before {
+        box-shadow: -2em -2em 5em #2228 inset;
+      }
+
+      h1::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15em;
+        width: 30em;
+        background: url(title.svg) no-repeat center/contain;
+        transition: filter 1s ease;
+        animation: 4s ease 1s titlefadein backwards;
+      }
+
+      h1:hover::after {
+        filter: drop-shadow(2px 2px 5px #0008);
+      }
+
+      @keyframes moonfadein {
+        0% {
+          box-shadow: -25em -25em 20em #222f inset;
+        }
+        
+        70% {
+          box-shadow: 0 0 0 #222f inset;
+        }
+        
+        75% {
+          box-shadow: 0 0 0 #2220 inset;
+        }
+      }
+
+      @keyframes titlefadein {
+        0% {
+          filter: blur(4em);
+          transform: perspective(300px) rotateY(-10deg);
+          clip: rect(auto, 10em, auto, -20em);
+        }
+        
+        37.5% {
+          filter: none;
+          transform: perspective(300px) rotateY(0);
+        }
+
+        56.25% {
+          filter: none;
+          transform: perspective(300px) rotateY(0);
+          clip: rect(auto, 50em, auto, -20em);
+        }
+      }
+
+      @keyframes silverfadein {
+        from { filter: brightness(0) }
+        to { filter: brightness(1) }
+      }
+
+      @keyframes navfadein {
+        from { opacity: 0 }
+        to { opacity: 0.5 }
+      }
+
+      @media (max-width: 45em)
+      {
+        @keyframes navfadein {
+          from { opacity: 0 }
+          to { opacity: 0.95 }
+        }
+      }
+
+      @keyframes fadein {
+        from { opacity: 0 }
+        to { opacity: 1 }
+      }
+
+      @keyframes fadeout {
+        from {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      @keyframes fontsizefix {
+        from { font-size: 1em }
+        to { font-size: 1em }
+      }
+
+      @media (max-width: 35em)
+      {
+        h1 {
+          font-size: 0.8em;
+          top: 15.2em;
+        }
+
+        @keyframes fontsizefix {
+          from { font-size: 0.8em }
+          to { font-size: 0.8em }
+        }
+      }
+
+      @media (max-width: 25em)
+      {
+        h1 {
+          font-size: 0.6em;
+          top: 23.5em;
+        }
+
+        @keyframes fontsizefix {
+          from { font-size: 0.6em }
+          to { font-size: 0.6em }
+        }
+      }
+
+      @media (max-width: 20em)
+      {
+        h1 {
+          font-size: 0.4em;
+          top: 40.2em;
+        }
+
+        @keyframes fontsizefix {
+          from { font-size: 0.4em }
+          to { font-size: 0.4em }
+        }
+      }
+
+
+      /**** navigation ****/
+
+      nav {
+        position: sticky;
+        top: 1em;
+        float: left;
+        background: #88c3;
+                                            /* background: url(rule.svg) no-repeat -140px 0px/1000px 10px #88c3; */
+        width: 12em;
+        border-radius: 0.5em;
+        margin: 0.5em;
+        box-shadow: 0 0 10px #87b8;
+        opacity: 0.5;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 3;
+        font-family: 'Cabin Sketch', sans;
+        font-size: 1.1em;
+        animation: 5s ease navfadein backwards;
+      }
+
+      nav:hover {
+        opacity: 1;
+      }
+
+      nav ol {
+        list-style: none;
+        margin: 0;
+        padding: 0.5em 0;
+      }
+
+      nav li a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 0.2em 0.2em 0.2em 2em;
+        transition: text-shadow 0.3s ease;
+        transition: padding 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      nav li a:hover {
+        padding: 0.2em 0 0.2em 2.2em;
+        text-shadow: 1px 1px 5px gray;
+      }
+
+      nav li a::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        margin-left: -1.5em;
+        background: url(paw.svg) no-repeat center/1em;
+        opacity: 0.2;
+        transition: margin 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        transition: margin 0.3s ease, opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+      }
+
+      nav li a:hover::before {
+        opacity: 1;
+        margin-left: -1.7em;
+        transform: rotate(-20deg) scale(1.1);
+        filter: drop-shadow(1px 1px 5px gray);
+      }
+
+
+      /**** main ****/
+
+      main {
+        margin: auto;
+        max-width: 40em;
+        position: relative;
+        z-index: 3;
+        animation: 5s ease fadein backwards;
+      }
+
+      h2 {
+        margin: 0.8em 0;
+        font-family: 'Cabin Sketch', sans;
+      }
+
+      p {
+        font-family: 'EB Garamond';
+        font-size: 1.2em;
+        margin: 0;
+        padding: 0;
+        hyphens: auto;
+        text-align: justify;
+      }
+
+      p + p {
+        text-indent: 1em;
+      }
+
+
+      /**** screen size adaptations ****/
+
+      @media (max-width: 72em)
+      {
+        main {
+          margin: 0 1em 0 16em;
+        }
+
+        head meta:nth-of-type(1), head meta:nth-of-type(2) {
+          right: auto;
+          left: 51em;
+        }
+      }
+
+      @media (max-width: 66em)
+      {
+        head meta:nth-of-type(1), head meta:nth-of-type(2) {
+          margin-left: 17em;
+        }
+      }
+
+      @media (max-width: 445em)
+      {
+        /*
+        main {
+          margin: 0 1em 0 1em;
+        }
+        */
+
+        nav {
+          position: fixed;
+          margin: 0;
+          width: auto;
+          float: none;
+          top: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          background: #88ce;
+          box-shadow: 0 0 10px #87b;
+          border-radius: 0;
+          z-index: 4;
+          opacity: 0.9;
+        }
+
+        nav li {
+          display: inline;
+        }
+
+        nav li a {
+          display: inline-block;
+        }
+      }
+
+
+      /**** summary ****/
+
+      #inhalt p {
+        text-align: center;
+        hyphens: none;
+        text-indent: 0;
+        margin: 0.5em 0;
+      }
+
+
+      /**** characters ****/
+
+                                                            #charaktere {
+                                                              margin: 0 4px;
+                                                              position: relative;
+                                                            }
+
+                                                            #charaktere h2 {
+                                                              margin: 0.8em -4px;
+                                                            }
+
+      #charaktere ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      #charaktere li {
+        display: inline-block;
+      }
+
+                                                            #charaktere li {
+                                                              background: #fff6;
+                                                              border-radius: 0.5em;
+                                                              border: 6px double #fff6;
+                                                              padding: 10px;
+                                                              margin: 0 -16px;
+                                                              box-shadow: 2px 2px 40px #64728d;
+                                                            }
+
+      #charaktere li + li {
+        margin-top: 3em;
+      }
+
+      #charaktere h3 {
+       display: none;
+      }
+
+      #charaktere img {
+        float: left;
+        position: relative;
+        margin: 0 2em 1em 0;
+        width: 50%;
+        height: auto;
+        box-shadow: 2px 2px 40px #64728d;
+        transform: perspective(700px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 2;
+      }
+
+      #charaktere h3 + img {
+        position: absolute;
+        left: 0;
+        box-shadow: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 3;
+      }
+
+      #charaktere h3 + img:hover {
+        padding: 0 1em 1em 0;
+        opacity: 0;
+      }
+
+      #charaktere h3 + img:active {
+        padding: 0;
+        opacity: 1;
+      }
+
+      #charaktere img:hover, #charaktere img:hover + img {
+        transform: perspective(700px) rotate3d(-1, 1, 0, 5deg) rotate(-1deg) translate(-3px, -3px);
+        box-shadow: 5px 5px 50px #64728d;
+      }
+
+      #charaktere h3 + img:hover {
+        box-shadow: none;
+      }
+
+      @media (max-width: 35em) {
+        #charaktere img {
+          transform: perspective(1000px);
+        }
+
+        #charaktere img:hover, #charaktere img:hover + img {
+          transform: perspective(1000px) rotate3d(-1, 1, 0, 5deg) rotate(-1deg) translate(-2px, -1px);
+          box-shadow: 5px 5px 50px #64728d;
+        }
+      }
+
+      @media (hover: hover) and (min-width: 35em) {
+        #charaktere img {
+          cursor: zoom-in;
+        }
+
+        #charaktere img:active, #charaktere img:active + img {
+          transform: scale(1.5) translate(20%, 0);
+          z-index: 3;
+        }
+
+        #charaktere h3 + img:active {
+          z-index: 4;
+        }
+      }
+
+      #charaktere p {
+        opacity: 0.5;
+        filter: blur(5px);
+        transition: opacity 0.3s ease;
+        transition: opacity 0.3s ease, filter 0.3s ease;
+      }
+
+      #charaktere :checked ~ p {
+        opacity: 1;
+        filter: none;
+      }
+
+      #charaktere input {
+        display: none;
+      }
+
+      #charaktere p label {
+        cursor: inherit;
+      }
+
+      #charaktere input + label {
+        display: block;
+        position: absolute;
+        padding: 1em 0.5em;
+        margin: 1.2em 0.5em 0 1.5em;
+        right: 0;
+        left: 50%;
+        text-align: center;
+        background: #955;
+        color: white;
+        font-family: 'Cabin Sketch', sans;
+        font-size: 2em;
+        border-radius: 0.5em;
+        z-index: 1;
+        box-shadow: 0 0 10px #87b8;
+        cursor: pointer;
+        transform: rotate(-15deg);
+        transition: visibility 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+        transition: visibility 0.3s ease, background 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        transition: visibility 0.3s ease, background 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+      }
+
+      #charaktere input + label:hover {
+        background: #a66;
+        transform: rotate(-18deg) scale(1.02);
+        box-shadow: 0 0 20px #87b8;
+      }
+
+      #charaktere input:checked + label {
+        filter: blur(5px);
+        transform: rotate(40deg) scale(0);
+        box-shadow: 0 0 10px #87b8;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      #charaktere p label {
+        display: block;
+      }
+
+      @media (max-width: 35em)
+      {
+        #charaktere img {
+          float: none;
+          width: 100%;
+          margin: 0 0 1em 0;
+        }
+
+        #charaktere input + label {
+          margin: 0.7em 0.5em;
+          padding: 0.7em 0.5em;
+          right: 0;
+          left: 0;
+        }
+      }
+
+
+      /**** footer ****/
+      footer {
+        position: relative;
+        z-index: 3;
+      }
+
+      footer::before {
+        display: block;
+        content: url(squiggle.svg);
+        line-height: 0;
+        margin-bottom: -1px
+      }
+
+      footer ul {
+        margin: 0;
+        padding: 2em;
+        background: #955;
+      }
+
+      footer a {
+        color: black;
+        text-decoration: none;
+      }
+    </style>
+
+    <script type="text/javascript">
+    //<![CDATA[
+      document.addEventListener("DOMContentLoaded", function() {
+        var previmg = null
+
+        var query = "(hover: hover) and (min-width: 35em)"
+
+        var nav = document.querySelector("nav")
+
+        var main = document.querySelector("main")
+
+        var images = document.querySelectorAll("#charaktere h3 + img")
+
+        var media = window.matchMedia(query)
+
+        var sheet = document.styleSheets[0]
+
+        var rules = sheet.cssRules
+
+        sheet.deleteRule(Array.from(rules).findIndex(function(rule) {
+          return rule.type === CSSRule.MEDIA_RULE && rule.conditionText === query
+        }))
+
+        var rule = rules[sheet.insertRule(
+          "main::before {" +
+          "  content: '';" +
+          "  background: black;" +
+          "  position: fixed;" +
+          "  top: 0;" +
+          "  left: 0;" +
+          "  right: 0;" +
+          "  bottom: 0;" +
+          "  z-index: 4;" +
+          "  opacity: 0;" +
+          "  visibility: hidden;" +
+          "  transition: opacity 0.3s ease, visibility 0.3s ease;" +
+          "}", rules.length)]
+
+        media.addListener(function() {
+          images.forEach(function(img) {
+            var cssText = media.matches ? "cursor: zoom-in" : ""
+            img.style.cssText = cssText
+            img.nextElementSibling.style.cssText = cssText
+          })
+        })
+
+        main.addEventListener("mousedown", function(event) {
+          if (previmg && event.target === main) {
+            previmg.style.cssText = "cursor: zoom-in"
+            previmg.nextElementSibling.style.cssText = "cursor: zoom-in"
+
+            rule.style.visibility = "hidden"
+            rule.style.opacity = "0"
+            nav.style.cssText = ""
+
+            previmg = null
+          }
+        })
+
+        images.forEach(function(img) {
+          var cssText = media.matches ? "cursor: zoom-in" : ""
+          img.style.cssText = cssText
+          img.nextElementSibling.style.cssText = cssText
+
+          img.addEventListener("mousedown", function() {
+            var cssText = media.matches ? "cursor: zoom-in" : ""
+
+            if (previmg && previmg !== img) {
+              previmg.style.cssText = cssText
+              previmg.nextElementSibling.style.cssText = cssText
+            }
+
+            if (media.matches && img.style.cssText.startsWith("cursor: zoom-in")) {
+              var bounds = img.getBoundingClientRect()
+              var top = (window.innerHeight - bounds.height) / 2 - bounds.top
+              var left = (window.innerWidth - bounds.width) / 2 - bounds.left
+
+              img.style.cssText =
+                "transform: translate(" + left + "px, " + top + "px) scale(1.5);" +
+                "cursor: zoom-out;" +
+                "z-index: 4;" +
+                "opacity: 1;" +
+                "padding: 0;"
+              img.nextElementSibling.style.cssText =
+                "transform: translate(" + left + "px, " + top + "px) scale(1.5);" +
+                "cursor: zoom-out;" +
+                "z-index: 3;"
+
+              rule.style.visibility = "visible"
+              rule.style.opacity = "0.5"
+              nav.style.cssText = "opacity: 0; visibility: hidden"
+
+              previmg = img
+            }
+            else {
+              img.style.cssText = cssText
+              img.nextElementSibling.style.cssText = cssText
+
+              rule.style.visibility = "hidden"
+              rule.style.opacity = "0"
+              nav.style.cssText = ""
+
+              previmg = null
+            }
+          })
+        })
+      })
+    //]]>
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Mondschein</h1>
+    </header>
+    <nav class="menu">
+      <ol>
+        <li><a href="#inhalt">Worum geht’s?</a></li>
+        <li><a href="#charaktere">Charaktere</a></li>
+        <li><a href="#leseprobe">Leseprobe</a></li>
+        <li><a href="#autorin">Über die Autorin</a></li>
+      </ol>
+    </nav>
+    <main>
+      <section id="inhalt">
+        <h2>Worum geht’s?</h2>
+        <p>Eine Geschichte über eine äußere und innere Reise des
+        Erwachsenwerdens. Über die Zerbrechlichkeit dessen,
+        was wir als sicher erachten und die Beständigkeit
+        dessen, was wir nie erwartet hätten. Über Freundschaft,
+        Familie, Liebe und Intrigen, die Verarbeitung von Trauer
+        und das Durchbrechen von festgefahrenen
+        Denkmustern.</p>
+        <!--<p>Silver, eine junge und verträumte Silberfüchsin, war nie
+        davon ausgegangen, dass sich etwas an dem
+        unbekümmerten Leben mit ihrer Familie ändern könnte,
+        bis ihre Welt durch ein traumatisches Ereignis
+        aus den Fugen gerät.</p>-->
+        <p>Bei der Mondschein-Reihe (mit insgesamt vier Teilen) handelt es sich um eine Familiensaga, die mit dem ersten Teil "Der Lauf der Füchsin" beginnt.
+        Im Zentrum der Reihe steht Silver, eine junge und verträumte Silberfüchsin, die nie
+        davon ausgegangen war, dass sich etwas an dem
+        unbekümmerten Leben mit ihrer Familie ändern könnte,
+        bis ihre Welt durch ein traumatisches Ereignis
+        aus den Fugen gerät.</p>
+      </section>
+      <section id="charaktere">
+        <h2>Charaktere</h2>
+        <ul>
+          <li>
+            <h3>Silver</h3>
+            <img alt="Silver" src="characters/silver.jpg" width="900" height="1090" />
+            <img alt="Silver" src="characters/silver-simple.jpg" width="900" height="1090" />
+            <input id="character-silver" type="checkbox" /><label for="character-silver">Spoiler Alert!</label>
+            <p><label for="character-silver">Silver lebt in einer Traumwelt, die zerbricht, als ihr kleiner Bruder Munter stirbt. Die Reise die sie
+            daraufhin antritt, ist eine Reise des Erwachsenwerdens. Alles, was sie bisher gekannt hat, wurde ihr
+            entrissen, so muss sie langsam wieder lernen, wem und was sie vertrauen kann. Da die Stützen ihres
+            bisherigen Lebens zusammen gefallen sind, ist sie auf der anderen Seite auch wieder (unbewusst)
+            sehr zugänglich für Neues – zum Beispiel für die Freundschaft zu einer Pflanzenfresserin, die trotz
+            Fressfeindschaft emotional gesehen ihren Verlust mit am besten verstehen kann.
+            Außerdem hat die Füchsin eine besondere Beziehung zum Mond, die ihre noch bestehende Bindung
+            zum Traumhaften kennzeichnet und der ihr oft Antworten weist. Eine Fähigkeit, zu der sie wie zu
+            allem anderen Vertrauen aufbauen muss, denn es handelt sich nur um einen Aspekt ihres
+            übernatürlichen Talents.</label></p>
+            <p><label for="character-silver">Silver entwickelt Freundschaften zu anderen Tieren, muss weiterhin konstant um ihr Leben
+            kämpfen, wobei sie jedoch dank dieser Freundschaften physisch und psychisch stärker wird. Sie
+            gerät in Fehden, verliebt sich und verarbeitet während all dieser Zeit den ursprünglichen Grund für
+            den Einschnitt in ihrem Leben – den Verlust ihres Bruders, zu dem sie noch mehr Kontakt hat, als
+            man annehmen könnte.</label></p>
+          </li>
+          <li>
+            <h3>Marder</h3>
+            <img alt="Marder" src="characters/marder.jpg" width="531" height="557" />
+            <img alt="Marder" src="characters/marder-simple.jpg" width="531" height="557" />
+            <input id="character-marder" type="checkbox" /><label for="character-marder">Spoiler Alert!</label>
+            <p><label for="character-marder">Der Marder ist in eine Abhängigkeit von einer Gruppe von Wildkatzen geraten, nachdem er zuvor
+            seine eigenen Leute hintergangen hat, die ihn daraufhin zusammen geschlagen und allein zurück
+            gelassen haben. Zunächst denkt er darüber nach – mit den Wildkatzen im Nacken – auch Silver zu
+            hintergehen, sie tun sich aber schließlich zusammen, um sich beide aus einer gefährlichen Situation
+            zu retten. Daraufhin entwickelt sich eine tiefe Freundschaft, die noch lange anhalten wird.</label></p>
+          </li>
+          <li>
+            <h3>Own</h3>
+            <img alt="Own" src="characters/own.jpg" width="447" height="396" />
+            <img alt="Own" src="characters/own-simple.jpg" width="447" height="396" />
+            <input id="character-own" type="checkbox" /><label for="character-own">Spoiler Alert!</label>
+            <p><label for="character-own">Own wird als emotionsloser Charakter eingeführt wird, der höchstens Misstrauen gegenüber
+            anderen empfindet. Silver begegnet ihr, als sie sie zu ihrem Mittagessen machen möchte, sie geraten
+            jedoch in eine Situation, aus der Own sie beide (nicht absichtlich) retten kann. Own schließt sich
+            Silver und dem Marder aus Gründen an, die für beide nicht ersichtlich sind. Mit der Zeit stellt sich
+            heraus, dass Own zutiefst traumatisiert ist, da sie ihre ganze Familie in einem Feuer verloren hat, als
+            sie noch ein Kind war. Auch für sie ist die entstehende ungewöhnliche Gruppe eine Möglichkeit,
+            über sich heraus zu wachsen und sich zu öffnen.</label></p>
+          </li>
+          <li>
+            <h3>Bluefire</h3>
+            <img alt="Bluefire" src="characters/bluefire.jpg" width="525" height="516" />
+            <img alt="Bluefire" src="characters/bluefire-simple.jpg" width="525" height="516" />
+            <input id="character-bluefire" type="checkbox" /><label for="character-bluefire">Spoiler Alert!</label>
+            <p><label for="character-bluefire">Bluefire (ein Fuchs mit ungewöhnlich blau schimmerndem Fell) begegnet Silver als
+            Leidensgenosse, als diese entführt wird. Der Grund für die Entführung hat mit den sogenannten
+            ‚Schatten‘ zu tun, eine Gruppe von Tieren, die sich laut Gerüchten ebenfalls über die
+            Gesetzlichkeiten von Fleisch- und Pflanzenfressern hinweg setzten. Bluefires Familie hat
+            wahrscheinlich mit diesen Schatten zu tun, wobei dieser beteuert, er wisse nichts genaueres darüber.
+            Das Verhältnis zu seinen Eltern ist allerdings sehr schlecht, was ihn emotional sehr verschlossen macht.
+            Dies zeigt sich nicht wie bei Own, so geht er
+            oberflächlich normal mit anderen um, doch als sich Gefühle zwischen ihm und Silver entwickeln,
+            macht sich das deutlich bemerkbar.</label></p>
+          </li>
+          <li>
+            <h3>Crass</h3>
+            <img alt="Crass" src="characters/crass.jpg" width="1400" height="1170" />
+            <img alt="Crass" src="characters/crass-simple.jpg" width="1400" height="1170" />
+            <input id="character-crass" type="checkbox" /><label for="character-crass">Spoiler Alert!</label>
+            <p><label for="character-crass">Als die Gruppe gezwungen ist sich wegen Jagden in einen bestimmten Wald zu flüchten, begegnen
+            sie Crass, dem Revierinhaber des Waldes. Der sarkastische und unergründliche Fuchswolf lässt sie
+            für eine Gegenleistung bei ihm wohnen, doch scheint er zusätzlich auch noch viel Gefallen daran zu
+            finden, ihre Abhängigkeit zu ihm auszunutzen und mit ihnen zu spielen. So macht er sich auf der
+            einen Seite lustig über ihre seltsame Zusammenstellung von Fleisch- und Pflanzenfresser, testet
+            deren Beziehung zueinander jedoch auf der anderen Seite mit einer gewissen Faszination. Immerhin
+            ist der Hybrid ja auch selbst kein gewöhnliches Tier.</label></p>
+          </li>
+          <li>
+            <h3>Sage und Whitestar</h3>
+            <img alt="Sage und Whitestar" src="characters/sage-whitestar.jpg" width="994" height="778" />
+            <img alt="Sage und Whitestar" src="characters/sage-whitestar-simple.jpg" width="994" height="778" />
+            <input id="character-sage-whitestar" type="checkbox" /><label for="character-sage-whitestar">Spoiler Alert!</label>
+            <p><label for="character-sage-whitestar">Sage und Whitestar sind die Eltern von Silver. Während er den besonnenen Part übernimmt, ist sie
+            die Emotionalere, Energischere und zuweilen auch Hysterische. Ein Schicksalsschlag folgt dem
+            nächsten. Nachdem ihr jüngster Sohn Munter gestorben ist und sich dann auch noch Silver von
+            ihnen getrennt hat, kommen obendrein noch Jäger in ihren Wald und sie sind gezwungen, ebenfalls
+            fort zu ziehen. Die Wilderer sind aber nicht zufällig in jenem Wäldchen, da silbernes Fell sehr
+            wertvoll ist. Whitestars und Sages Vorfahren sind durch eine Pelzfarm in dieses Land gekommen,
+            was sie ihren Kindern bisher verschwiegen hatten.</label></p>
+          </li>
+          <li>
+            <h3>Stürmisch</h3>
+            <img alt="Stürmisch" src="characters/stürmisch.jpg" width="970" height="1267" />
+            <img alt="Stürmisch" src="characters/stürmisch-simple.jpg" width="970" height="1267" />
+            <input id="character-stürmisch" type="checkbox" /><label for="character-stürmisch">Spoiler Alert!</label>
+            <p><label for="character-stürmisch">Stürmisch ist Silvers älterer Bruder. Er ist das Gegenteil von ihr und Munter – wild, ungestüm und
+            mit gelegentlicher Selbstüberschätzung. Dies führt ihn zu Anfang häufig in gefährliche und auch
+            demütigende Situationen, in denen er lernen muss, wo seine Grenzen liegen.
+            Als er mit seinen Eltern flieht, kommen sie in einen anderen Wald mit einer Rotfuchsfamilie, bei
+            denen sie Zuflucht suchen. Er verliebt sich in die junge Rotfüchsin Zart, die seine Gefühle auch
+            erwidert. Allerdings wird die Beziehung von ihrem Bruder Wind manipuliert. Außerdem ist ihre
+            Großmutter Wintry auch strikt gegen die Neulinge und greift dabei zu immer extremeren
+            Maßnahmen, was Stürmisch am eigenen Leib erfahren muss.</label></p>
+          </li>
+          <li>
+            <h3>Munter</h3>
+            <img alt="Munter" src="characters/munter.jpg" width="1176" height="995" />
+            <img alt="Munter" src="characters/munter-simple.jpg" width="1176" height="995" />
+            <input id="character-munter" type="checkbox" /><label for="character-munter">Spoiler Alert!</label>
+            <p><label for="character-munter">Munter ist der Bruder von Silver und Stürmisch. Ihn und Silver verbindet
+            eine träumerische Ader, die sie in ihrer kindlichen Art mit niemandem so gut teilen können wie mit dem jeweils anderen.
+            Genau diese Traumwelt abseits von der realen wird Munter jedoch zum Verhängnis, indem er beim Spielen die Straße nicht
+            beachten und von einem Auto erfasst wird. Daraufhin beginnt er jedoch, in Silvers Träumen zu erscheinen.</label></p>
+          </li>
+          <li>
+            <h3>Kühl</h3>
+            <img alt="Kühl" src="characters/kühl.jpg" width="645" height="517" />
+            <img alt="Kühl" src="characters/kühl-simple.jpg" width="645" height="517" />
+            <input id="character-kühl" type="checkbox" /><label for="character-kühl">Spoiler Alert!</label>
+            <p><label for="character-kühl">Kühl ist der Anführer der Familie, hat ein starkes und selbstsicheres Auftreten, worunter eine immer
+            präsente Unsicherheit liegt, die er hauptsächlich mithilfe seiner Gefährtin Heart unter Kontrolle hat.
+            Sein Verhältnis zu seiner Mutter Wintry ist von Dominanz, Misstrauen und Machtspielchen geprägt.
+            Er möchte nicht so werden wie sie, trifft ihr gegenüber jedoch manchmal Entscheidungen, die ihm
+            zu genau dem werden lassen. Sein Wandeln zwischen Gerechtigkeit und Eigennutz findet
+            manchmal auf einem dünnen Grad statt und der Konflikt, der sich zwischen Wintry und der
+            Silberfuchsfamilie zuspitzt, stellt seine Integrität auf eine Probe.</label></p>
+          </li>
+          <li>
+            <h3>Heart</h3>
+            <img alt="Heart" src="characters/heart.jpg" width="542" height="485" />
+            <img alt="Heart" src="characters/heart-simple.jpg" width="542" height="485" />
+            <input id="character-heart" type="checkbox" /><label for="character-heart">Spoiler Alert!</label>
+            <p><label for="character-heart">Heart ist die Gefährtin Kühls. Sie ist neben Silver ein weiterer Charakter, der womöglich eine besondere
+            Gabe besitzt, die sie oft bei verworrenen Situationen den
+            Überblick bewahren lässt. Im Gegensatz zu ihrem Gefährten lässt sie sich nicht auf physische
+            Auseinandersetzungen ein, sondern agiert als oftmals einzig verbliebener Ruhepol.</label></p>
+          </li>
+          <li>
+            <h3>Wintry</h3>
+            <img alt="Wintry" src="characters/wintry.jpg" width="613" height="701" />
+            <img alt="Wintry" src="characters/wintry-simple.jpg" width="613" height="701" />
+            <input id="character-wintry" type="checkbox" /><label for="character-wintry">Spoiler Alert!</label>
+            <p><label for="character-wintry">Wintry ist die Mutter Kühls und Antagonist der Silberfüchse. Als frühere Entscheidungsträgerin der
+            Familie fällt es ihr schwer, die Macht an ihren Sohn abzugeben. Sie sieht nicht ein, dass sie früher
+            ihr Land gegen eine andere Rotfuchsfamilie verteidigt hat, wobei ihr Gefährte das Leben lassen musste,
+            und Kühl den neuen Eindringlingen
+            einfach Eintritt gewährt. Während sich ihr Hass aufbaut, verliert sie jedoch mehr und mehr den
+            Bezug zur Realität und greift zu immer extremeren Maßnahmen.</label></p>
+          </li>
+          <li>
+            <h3>Wind</h3>
+            <img alt="Wind" src="characters/wind.jpg" width="490" height="665" />
+            <img alt="Wind" src="characters/wind-simple.jpg" width="490" height="665" />
+            <input id="character-wind" type="checkbox" /><label for="character-wind">Spoiler Alert!</label>
+            <p><label for="character-wind">Wind ist der Sohn Kühl und Hearts. Er ist durchtrieben und beobachtet alles mit einer gewissen
+            Rationalität, auch wenn er seine Schläue gerne dazu nutzt, das zu bekommen, was er möchte. So ist
+            er sich bewusst, dass es sich bei dem Aufnehmen der Silberfüchse um einen Machtkampf zwischen
+            seinem Vater und seiner Großmutter handelt, mag jedoch Stürmischs Art nicht und wie dieser sich
+            seiner Schwester Zart annähert, die ihm viel bedeutet.</label></p>
+            <p><label for="character-wind">Er tut sich mit seiner Großmutter Wintry zusammen, um gegen die Silberfüchse vorzugehen,
+            allerdings wird schon bald klar, dass sich ihre Methoden sehr unterscheiden. Als ihm außerdem
+            bewusst wird, wie sehr Zart unter seinen Manipulationen leidet, kommen in ihm tatsächlich
+            Schuldgefühle auf, die ihn seine Position in der immer verzwickter werdenden Situation
+            überdenken lassen.</label></p>
+          </li>
+          <li>
+            <h3>Zart</h3>
+            <img alt="Zart" src="characters/zart.jpg" width="761" height="406" />
+            <img alt="Zart" src="characters/zart-simple.jpg" width="761" height="406" />
+            <input id="character-zart" type="checkbox" /><label for="character-zart">Spoiler Alert!</label>
+            <p><label for="character-zart">Zart findet Gefallen an Stürmischs Annäherungsversuchen und entwickelt kurz darauf auch Gefühle
+            für ihn. Sie wurde emotional jedoch bereits schon einmal von jemandem verletzt, was Wind dazu
+            nutzt, um Zweifel zu sähen. Ihre Beziehung zu Stürmisch steht daher schon fast von Beginn an
+            unter keinem guten Stern und zerbröckelt, bevor sie richtig aufgebaut ist.
+            Sie hat ein gutes Bruder-Schwester-Verhältnis zu Wind, das durch dessen Handlungen sehr
+            erschüttert wird.</label></p>
+          </li>
+          <li>
+            <h3>Cunning</h3>
+            <img alt="Cunning" src="characters/cunning.jpg" width="592" height="582" />
+            <img alt="Cunning" src="characters/cunning-simple.jpg" width="592" height="582" />
+            <input id="character-cunning" type="checkbox" /><label for="character-cunning">Spoiler Alert!</label>
+            <p><label for="character-cunning">Cunning ist das dritte Kind von Kühl und Heart. Er bemerkt als erster, dass etwas zwischen Zart und Stürmisch vorgefallen ist,
+            mit dem sich eine Freundschaft bildet. Er ist derjenige, der beide Parteien dazu bringt, sich wieder anzunähern,
+            ohne jedoch Winds Beteiligung daran zu erkennen.</label></p>
+          </li>
+          <li>
+            <h3>Dry</h3>
+            <img alt="Dry" src="characters/dry.jpg" width="425" height="378" />
+            <img alt="Dry" src="characters/dry-simple.jpg" width="425" height="378" />
+            <input id="character-dry" type="checkbox" /><label for="character-dry">Spoiler Alert!</label>
+            <p><label for="character-dry">Dry trifft erst spät auf die Gruppe von Silver durch Own. Er ist ein Draufgänger, der sich
+            eigentlich nicht wirklich für die Gruppe interesssiert, Own jedoch erhascht mit ihrer veschlossenen und doch sehr direkten Art
+            seine Aufmerksamkeit. Von der Herausforderung ihre Schale zu knacken getrieben, entschließt er sich am Ende mit ihnen den Wald von Crass zu verlassen.</label></p>
+          </li>
+          <li>
+            <h3>Vinous</h3>
+            <img alt="Vinous" src="characters/vinous.jpg" width="418" height="322" />
+            <img alt="Vinous" src="characters/vinous-simple.jpg" width="418" height="322" />
+            <input id="character-vinous" type="checkbox" /><label for="character-vinous">Spoiler Alert!</label>
+            <p><label for="character-vinous">Vinous wird durch Owns Initiative vor dem Verdursten gerettet. Er ist ein analytischer Denker, hält sich jedoch mit Informationen über sich zurück.
+            Auch er hat eine gewisse Fasziation für die Gruppe, weswegen er sich nicht wieder komplett zurückzieht und ihnen in manchen Situationen sogar hilft.</label></p>
+          </li>
+        </ul>
+      </section>
+      <section id="leseprobe">
+        <h2>Leseprobe</h2>
+      </section>
+      <section id="autorin">
+        <h2>Über die Autorin</h2>
+        <p> Hallo ihr Lieben, ich bin Bellisae (nein, das ist nicht mein richtiger Name 😉). Zurzeit bin ich 28 Jahre und habe mich entschlossen,
+        mein Herzensprojekt "Mondschein" zu veröffentlichen, bevor es auf der Festplatte versauert. Das Projekt begleitet mich nun viele Jahre,
+        sowohl der Text als auch die dazugehörigen Zeichnungen (alle Zeichnungen und auch der Buchtrailer sind komplett von mir selbst erstellt).
+        Eigentlich bin ich Psychologin, aber ich liebe es einfach, mit Medien zu arbeiten,
+        sei es schreiben, zeichnen oder schneiden von Video-Material. Zusätzlich habe ich auch einen Bachelor in Film- und Buchwissenschaft.</p>
+      </section>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="Impressum.xhtml">Impressum</a></li>
+        <li><a href="Datenschutzerklärung.xhtml">Datenschutzerklärung</a></li>
+        <li>Social</li>
+      </ul>
+    </footer>
+  </body>
+</html>
