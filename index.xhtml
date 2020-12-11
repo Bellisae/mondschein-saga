@@ -22,11 +22,6 @@
     <link rel="preload" href="rule.svg" as="image" />
     <link rel="preload" href="silver.png" as="image" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <!--
-    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&amp;display=swap" rel="stylesheet" />
-    -->
-    <link href="https://fonts.googleapis.com/css2?family=Italianno&amp;display=swap" rel="stylesheet" />
 
     <link rel="apple-touch-icon" sizes="192x192" href="moon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="moon-180.png" />
@@ -48,7 +43,7 @@
     <link rel="icon" sizes="16x16" href="moon-16.png" />
 
     <style type="text/css">
-      @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|EB+Garamond:400,400i");
+      @import url("https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|EB+Garamond:400,400i|Kalam:300|Tangerine:700");
 
       /**** document ****/
 
@@ -72,26 +67,6 @@
         background: #eef;
         background: linear-gradient(#eef9, #eef9), url(clouds.jpg) #eef;
       }
-
-      /*
-      body::after {
-        content: '';
-        display: block;
-        width: 648px;
-        height: 648px;
-        background: url('silver.png') center/100%;
-        position: fixed;
-        bottom: 0;
-        right: -320px;
-        z-index: 2;
-        transition: margin-left 0.8s ease;
-        animation: 5s ease fadein backwards;
-      }
-
-      body::after:hover {
-        background: url('silver-moon.png') center/100%, url('silver.png') center/100%;
-      }
-      */
 
       head {
         display: block;
@@ -275,15 +250,7 @@
 
       @keyframes navfadein {
         from { opacity: 0 }
-        to { opacity: 0.5 }
-      }
-
-      @media (max-width: 45em)
-      {
-        @keyframes navfadein {
-          from { opacity: 0 }
-          to { opacity: 0.95 }
-        }
+        to { opacity: 0.9 }
       }
 
       @keyframes fadein {
@@ -351,18 +318,17 @@
       /**** navigation ****/
 
       nav {
-        position: sticky;
-        top: 1em;
-        float: left;
-        background: #88c3;
-                                            /* background: url(rule.svg) no-repeat -140px 0px/1000px 10px #88c3; */
-        width: 12em;
-        border-radius: 0.5em;
-        margin: 0.5em;
-        box-shadow: 0 0 10px #87b8;
-        opacity: 0.5;
+        position: fixed;
+        margin: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background: #88ce;
+        box-shadow: 0 0 10px #87b, 0 -5px 10px #0002 inset;
+        z-index: 4;
+        opacity: 0.9;
         transition: opacity 0.3s ease, visibility 0.3s ease;
-        z-index: 3;
         font-family: 'Cabin Sketch', sans;
         font-size: 1.1em;
         animation: 5s ease navfadein backwards;
@@ -378,8 +344,12 @@
         padding: 0.5em 0;
       }
 
+      nav li {
+        display: inline;
+      }
+
       nav li a {
-        display: block;
+        display: inline-block;
         color: black;
         text-decoration: none;
         padding: 0.2em 0.2em 0.2em 2em;
@@ -416,7 +386,8 @@
       /**** main ****/
 
       main {
-        margin: auto;
+        margin: 0 auto;
+        padding: 0 1em;
         max-width: 40em;
         position: relative;
         z-index: 3;
@@ -426,6 +397,8 @@
       h2 {
         margin: 0.8em 0;
         font-family: 'Cabin Sketch', sans;
+                                                                font-family: Tangerine, sans;
+                                                                font-size: 2.5em;
       }
 
       p {
@@ -446,10 +419,6 @@
 
       @media (max-width: 72em)
       {
-        main {
-          margin: 0 1em 0 16em;
-        }
-
         head meta:nth-of-type(1), head meta:nth-of-type(2) {
           right: auto;
           left: 51em;
@@ -463,39 +432,6 @@
         }
       }
 
-      @media (max-width: 445em)
-      {
-        /*
-        main {
-          margin: 0 1em 0 1em;
-        }
-        */
-
-        nav {
-          position: fixed;
-          margin: 0;
-          width: auto;
-          float: none;
-          top: 0;
-          left: 0;
-          right: 0;
-          text-align: center;
-          background: #88ce;
-          box-shadow: 0 0 10px #87b;
-          border-radius: 0;
-          z-index: 4;
-          opacity: 0.9;
-        }
-
-        nav li {
-          display: inline;
-        }
-
-        nav li a {
-          display: inline-block;
-        }
-      }
-
 
       /**** summary ****/
 
@@ -504,6 +440,8 @@
         hyphens: none;
         text-indent: 0;
         margin: 0.5em 0;
+        font-family: Kalam, sans;
+        font-weight: lighter;
       }
 
 
@@ -864,7 +802,7 @@
             <h3>Silver</h3>
             <img alt="Silver" src="characters/silver.jpg" width="900" height="1090" />
             <img alt="Silver" src="characters/silver-simple.jpg" width="900" height="1090" />
-            <input id="character-silver" type="checkbox" /><label for="character-silver">Spoiler Alert!</label>
+            <input id="character-silver" type="checkbox" /><label for="character-silver"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-silver">Silver lebt in einer Traumwelt, die zerbricht, als ihr kleiner Bruder Munter stirbt. Die Reise die sie
             daraufhin antritt, ist eine Reise des Erwachsenwerdens. Alles, was sie bisher gekannt hat, wurde ihr
             entrissen, so muss sie langsam wieder lernen, wem und was sie vertrauen kann. Da die Stützen ihres
@@ -885,7 +823,7 @@
             <h3>Marder</h3>
             <img alt="Marder" src="characters/marder.jpg" width="531" height="557" />
             <img alt="Marder" src="characters/marder-simple.jpg" width="531" height="557" />
-            <input id="character-marder" type="checkbox" /><label for="character-marder">Spoiler Alert!</label>
+            <input id="character-marder" type="checkbox" /><label for="character-marder"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-marder">Der Marder ist in eine Abhängigkeit von einer Gruppe von Wildkatzen geraten, nachdem er zuvor
             seine eigenen Leute hintergangen hat, die ihn daraufhin zusammen geschlagen und allein zurück
             gelassen haben. Zunächst denkt er darüber nach – mit den Wildkatzen im Nacken – auch Silver zu
@@ -896,7 +834,7 @@
             <h3>Own</h3>
             <img alt="Own" src="characters/own.jpg" width="447" height="396" />
             <img alt="Own" src="characters/own-simple.jpg" width="447" height="396" />
-            <input id="character-own" type="checkbox" /><label for="character-own">Spoiler Alert!</label>
+            <input id="character-own" type="checkbox" /><label for="character-own"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-own">Own wird als emotionsloser Charakter eingeführt wird, der höchstens Misstrauen gegenüber
             anderen empfindet. Silver begegnet ihr, als sie sie zu ihrem Mittagessen machen möchte, sie geraten
             jedoch in eine Situation, aus der Own sie beide (nicht absichtlich) retten kann. Own schließt sich
@@ -909,7 +847,7 @@
             <h3>Bluefire</h3>
             <img alt="Bluefire" src="characters/bluefire.jpg" width="525" height="516" />
             <img alt="Bluefire" src="characters/bluefire-simple.jpg" width="525" height="516" />
-            <input id="character-bluefire" type="checkbox" /><label for="character-bluefire">Spoiler Alert!</label>
+            <input id="character-bluefire" type="checkbox" /><label for="character-bluefire"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-bluefire">Bluefire (ein Fuchs mit ungewöhnlich blau schimmerndem Fell) begegnet Silver als
             Leidensgenosse, als diese entführt wird. Der Grund für die Entführung hat mit den sogenannten
             ‚Schatten‘ zu tun, eine Gruppe von Tieren, die sich laut Gerüchten ebenfalls über die
@@ -924,7 +862,7 @@
             <h3>Crass</h3>
             <img alt="Crass" src="characters/crass.jpg" width="1400" height="1170" />
             <img alt="Crass" src="characters/crass-simple.jpg" width="1400" height="1170" />
-            <input id="character-crass" type="checkbox" /><label for="character-crass">Spoiler Alert!</label>
+            <input id="character-crass" type="checkbox" /><label for="character-crass"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-crass">Als die Gruppe gezwungen ist sich wegen Jagden in einen bestimmten Wald zu flüchten, begegnen
             sie Crass, dem Revierinhaber des Waldes. Der sarkastische und unergründliche Fuchswolf lässt sie
             für eine Gegenleistung bei ihm wohnen, doch scheint er zusätzlich auch noch viel Gefallen daran zu
@@ -937,7 +875,7 @@
             <h3>Sage und Whitestar</h3>
             <img alt="Sage und Whitestar" src="characters/sage-whitestar.jpg" width="994" height="778" />
             <img alt="Sage und Whitestar" src="characters/sage-whitestar-simple.jpg" width="994" height="778" />
-            <input id="character-sage-whitestar" type="checkbox" /><label for="character-sage-whitestar">Spoiler Alert!</label>
+            <input id="character-sage-whitestar" type="checkbox" /><label for="character-sage-whitestar"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-sage-whitestar">Sage und Whitestar sind die Eltern von Silver. Während er den besonnenen Part übernimmt, ist sie
             die Emotionalere, Energischere und zuweilen auch Hysterische. Ein Schicksalsschlag folgt dem
             nächsten. Nachdem ihr jüngster Sohn Munter gestorben ist und sich dann auch noch Silver von
@@ -950,7 +888,7 @@
             <h3>Stürmisch</h3>
             <img alt="Stürmisch" src="characters/stürmisch.jpg" width="970" height="1267" />
             <img alt="Stürmisch" src="characters/stürmisch-simple.jpg" width="970" height="1267" />
-            <input id="character-stürmisch" type="checkbox" /><label for="character-stürmisch">Spoiler Alert!</label>
+            <input id="character-stürmisch" type="checkbox" /><label for="character-stürmisch"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-stürmisch">Stürmisch ist Silvers älterer Bruder. Er ist das Gegenteil von ihr und Munter – wild, ungestüm und
             mit gelegentlicher Selbstüberschätzung. Dies führt ihn zu Anfang häufig in gefährliche und auch
             demütigende Situationen, in denen er lernen muss, wo seine Grenzen liegen.
@@ -964,7 +902,7 @@
             <h3>Munter</h3>
             <img alt="Munter" src="characters/munter.jpg" width="1176" height="995" />
             <img alt="Munter" src="characters/munter-simple.jpg" width="1176" height="995" />
-            <input id="character-munter" type="checkbox" /><label for="character-munter">Spoiler Alert!</label>
+            <input id="character-munter" type="checkbox" /><label for="character-munter"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-munter">Munter ist der Bruder von Silver und Stürmisch. Ihn und Silver verbindet
             eine träumerische Ader, die sie in ihrer kindlichen Art mit niemandem so gut teilen können wie mit dem jeweils anderen.
             Genau diese Traumwelt abseits von der realen wird Munter jedoch zum Verhängnis, indem er beim Spielen die Straße nicht
@@ -974,7 +912,7 @@
             <h3>Kühl</h3>
             <img alt="Kühl" src="characters/kühl.jpg" width="645" height="517" />
             <img alt="Kühl" src="characters/kühl-simple.jpg" width="645" height="517" />
-            <input id="character-kühl" type="checkbox" /><label for="character-kühl">Spoiler Alert!</label>
+            <input id="character-kühl" type="checkbox" /><label for="character-kühl"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-kühl">Kühl ist der Anführer der Familie, hat ein starkes und selbstsicheres Auftreten, worunter eine immer
             präsente Unsicherheit liegt, die er hauptsächlich mithilfe seiner Gefährtin Heart unter Kontrolle hat.
             Sein Verhältnis zu seiner Mutter Wintry ist von Dominanz, Misstrauen und Machtspielchen geprägt.
@@ -987,7 +925,7 @@
             <h3>Heart</h3>
             <img alt="Heart" src="characters/heart.jpg" width="542" height="485" />
             <img alt="Heart" src="characters/heart-simple.jpg" width="542" height="485" />
-            <input id="character-heart" type="checkbox" /><label for="character-heart">Spoiler Alert!</label>
+            <input id="character-heart" type="checkbox" /><label for="character-heart"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-heart">Heart ist die Gefährtin Kühls. Sie ist neben Silver ein weiterer Charakter, der womöglich eine besondere
             Gabe besitzt, die sie oft bei verworrenen Situationen den
             Überblick bewahren lässt. Im Gegensatz zu ihrem Gefährten lässt sie sich nicht auf physische
@@ -997,7 +935,7 @@
             <h3>Wintry</h3>
             <img alt="Wintry" src="characters/wintry.jpg" width="613" height="701" />
             <img alt="Wintry" src="characters/wintry-simple.jpg" width="613" height="701" />
-            <input id="character-wintry" type="checkbox" /><label for="character-wintry">Spoiler Alert!</label>
+            <input id="character-wintry" type="checkbox" /><label for="character-wintry"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-wintry">Wintry ist die Mutter Kühls und Antagonist der Silberfüchse. Als frühere Entscheidungsträgerin der
             Familie fällt es ihr schwer, die Macht an ihren Sohn abzugeben. Sie sieht nicht ein, dass sie früher
             ihr Land gegen eine andere Rotfuchsfamilie verteidigt hat, wobei ihr Gefährte das Leben lassen musste,
@@ -1009,7 +947,7 @@
             <h3>Wind</h3>
             <img alt="Wind" src="characters/wind.jpg" width="490" height="665" />
             <img alt="Wind" src="characters/wind-simple.jpg" width="490" height="665" />
-            <input id="character-wind" type="checkbox" /><label for="character-wind">Spoiler Alert!</label>
+            <input id="character-wind" type="checkbox" /><label for="character-wind"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-wind">Wind ist der Sohn Kühl und Hearts. Er ist durchtrieben und beobachtet alles mit einer gewissen
             Rationalität, auch wenn er seine Schläue gerne dazu nutzt, das zu bekommen, was er möchte. So ist
             er sich bewusst, dass es sich bei dem Aufnehmen der Silberfüchse um einen Machtkampf zwischen
@@ -1025,7 +963,7 @@
             <h3>Zart</h3>
             <img alt="Zart" src="characters/zart.jpg" width="761" height="406" />
             <img alt="Zart" src="characters/zart-simple.jpg" width="761" height="406" />
-            <input id="character-zart" type="checkbox" /><label for="character-zart">Spoiler Alert!</label>
+            <input id="character-zart" type="checkbox" /><label for="character-zart"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-zart">Zart findet Gefallen an Stürmischs Annäherungsversuchen und entwickelt kurz darauf auch Gefühle
             für ihn. Sie wurde emotional jedoch bereits schon einmal von jemandem verletzt, was Wind dazu
             nutzt, um Zweifel zu sähen. Ihre Beziehung zu Stürmisch steht daher schon fast von Beginn an
@@ -1037,7 +975,7 @@
             <h3>Cunning</h3>
             <img alt="Cunning" src="characters/cunning.jpg" width="592" height="582" />
             <img alt="Cunning" src="characters/cunning-simple.jpg" width="592" height="582" />
-            <input id="character-cunning" type="checkbox" /><label for="character-cunning">Spoiler Alert!</label>
+            <input id="character-cunning" type="checkbox" /><label for="character-cunning"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-cunning">Cunning ist das dritte Kind von Kühl und Heart. Er bemerkt als erster, dass etwas zwischen Zart und Stürmisch vorgefallen ist,
             mit dem sich eine Freundschaft bildet. Er ist derjenige, der beide Parteien dazu bringt, sich wieder anzunähern,
             ohne jedoch Winds Beteiligung daran zu erkennen.</label></p>
@@ -1046,7 +984,7 @@
             <h3>Dry</h3>
             <img alt="Dry" src="characters/dry.jpg" width="425" height="378" />
             <img alt="Dry" src="characters/dry-simple.jpg" width="425" height="378" />
-            <input id="character-dry" type="checkbox" /><label for="character-dry">Spoiler Alert!</label>
+            <input id="character-dry" type="checkbox" /><label for="character-dry"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-dry">Dry trifft erst spät auf die Gruppe von Silver durch Own. Er ist ein Draufgänger, der sich
             eigentlich nicht wirklich für die Gruppe interesssiert, Own jedoch erhascht mit ihrer veschlossenen und doch sehr direkten Art
             seine Aufmerksamkeit. Von der Herausforderung ihre Schale zu knacken getrieben, entschließt er sich am Ende mit ihnen den Wald von Crass zu verlassen.</label></p>
@@ -1055,7 +993,7 @@
             <h3>Vinous</h3>
             <img alt="Vinous" src="characters/vinous.jpg" width="418" height="322" />
             <img alt="Vinous" src="characters/vinous-simple.jpg" width="418" height="322" />
-            <input id="character-vinous" type="checkbox" /><label for="character-vinous">Spoiler Alert!</label>
+            <input id="character-vinous" type="checkbox" /><label for="character-vinous"><strong>Spoiler Alert!</strong></label>
             <p><label for="character-vinous">Vinous wird durch Owns Initiative vor dem Verdursten gerettet. Er ist ein analytischer Denker, hält sich jedoch mit Informationen über sich zurück.
             Auch er hat eine gewisse Fasziation für die Gruppe, weswegen er sich nicht wieder komplett zurückzieht und ihnen in manchen Situationen sogar hilft.</label></p>
           </li>
