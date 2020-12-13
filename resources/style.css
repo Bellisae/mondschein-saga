@@ -726,6 +726,31 @@ footer li:nth-of-type(3) a::before {
   }
 }
 
+@media (min-width: 40em)
+{
+  footer ul { margin-top: -2em }
+}
+
+@media (min-width: 60em)
+{
+  footer ul { margin-top: -4em }
+}
+
+@media (min-width: 80em)
+{
+  footer ul { margin-top: -6em }
+}
+
+@media (min-width: 100em)
+{
+  footer ul { margin-top: -8em }
+}
+
+@media (min-width: 150em)
+{
+  footer ul { margin-top: -10em }
+}
+
 
 /**** imprint ****/
 
