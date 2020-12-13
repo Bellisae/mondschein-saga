@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Kalam:300|Tangerine:700|Cabin+Sketch:400,700|EB+Garamond:400,400i|Lato:400");
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Tangerine:wght@700&family=Cabin+Sketch:wght@400;700&family=EB+Garamond:ital@0;1&family=Libre+Franklin:wght@500..900');
 
 /**** document ****/
 
@@ -610,9 +610,13 @@ a:hover {
 
 /**** footer ****/
 
+footer ::selection {
+  color: white;
+  background: #800;
+}
+
 footer {
   position: relative;
-  font-family: Lato, sans-serif;
   z-index: 3;
 }
 
@@ -625,7 +629,7 @@ footer::before {
 
 footer ul {
   margin: 0;
-  padding: 0 2em 2em 2em;
+  padding: 2em;
   background: #955;
   list-style: none;
   display: flex;
@@ -645,19 +649,38 @@ footer li:nth-of-type(-n + 3) {
 }
 
 footer li:nth-of-type(n + 4) {
-  width: 12em;
+  width: 13em;
   text-align: right;
 }
 
 footer a {
   position: relative;
   margin-left: 2em;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 500;
   color: black;
   text-decoration: none;
+  transition: font-weight 0.3s ease !important;
 }
 
 footer a:hover {
   text-shadow: none;
+}
+
+@supports (font-variation-settings: "wght" 900)
+{
+  footer a {
+    animation: 2s ease fontweightfix backwards;
+  }
+
+  footer a:hover {
+    font-weight: 900;
+  }
+
+  @keyframes fontweightfix {
+    from { font-weight: 900 }
+    to { font-weight: 500 }
+  }
 }
 
 footer a::after {
@@ -669,7 +692,7 @@ footer a::after {
   left: 0;
   opacity: 0;
   background: black;
-  margin-top: -0.3em;
+  margin-top: -0.4em;
   transition: width 0.3s ease, opacity 0.3s step-end;
 }
 
@@ -688,8 +711,14 @@ footer li:nth-of-type(n + 4) a::after {
 footer a::before {
   position: absolute;
   margin: 0.1em 0 0 -1.4em;
+  padding-right: 0.4em;
   width: 1em;
   height: 1em;
+  transition: transform 0.3s ease;
+}
+
+footer a:hover::before {
+  transform: translate(0, -0.1em) scale(1.2);
 }
 
 footer li:nth-of-type(1) a::before {
@@ -708,7 +737,7 @@ footer li:nth-of-type(3) a::before {
 {
   footer ul {
     display: block;
-    padding: 2em;
+    padding: 2em 2em 3em 2em;
     height: auto;
   }
 
@@ -752,7 +781,7 @@ footer li:nth-of-type(3) a::before {
 }
 
 
-/**** imprint ****/
+/**** imprint and data privacy statement ****/
 
 #impressum head meta:nth-of-type(1),
 #impressum head meta:nth-of-type(2),
