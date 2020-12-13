@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|EB+Garamond:400,400i|Kalam:300|Tangerine:700");
+@import url("https://fonts.googleapis.com/css?family=Kalam:300|Tangerine:700|Cabin+Sketch:400,700|EB+Garamond:400,400i|Lato:400");
 
 /**** document ****/
 
@@ -281,7 +281,7 @@ nav {
   z-index: 4;
   opacity: 0.9;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  font-family: 'Cabin Sketch', sans;
+  font-family: 'Cabin Sketch', sans-serif;
   font-size: 1.1em;
   animation: 5s ease navfadein backwards;
 }
@@ -312,6 +312,8 @@ nav li a {
 nav li a:hover {
   padding: 0.2em 0.05em 0.2em 2.15em;
   text-shadow: 1px 1px 5px gray;
+  transition: text-shadow 0.3s ease;
+  transition: padding 0.3s ease, text-shadow 0.3s ease;
 }
 
 nav li a::before {
@@ -323,14 +325,13 @@ nav li a::before {
   margin-left: -1.4em;
   background: url(paw.svg) no-repeat center/1em;
   opacity: 0.2;
-  transition: margin 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-  transition: margin 0.3s ease, opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
 nav li a:hover::before {
   opacity: 1;
-  margin-left: -1.5em;
-  transform: rotate(-20deg) scale(1.1);
+  transform: rotate(-20deg) scale(1.1) translate(-0.1em, 0);
   filter: drop-shadow(1px 1px 5px gray);
 }
 
@@ -347,9 +348,10 @@ main {
 }
 
 h2 {
-  margin: 0.8em 0;
-  font-family: 'Cabin Sketch', sans;
-                                                          font-family: Tangerine, sans;
+  margin: 0;
+  padding: 1.5em 0 0.5em 0;
+  font-family: 'Cabin Sketch', sans-serif;
+                                                          font-family: Tangerine, sans-serif;
                                                           font-size: 2.5em;
 }
 
@@ -413,7 +415,7 @@ a:hover {
   hyphens: none;
   text-indent: 0;
   margin: 0.5em 0;
-  font-family: Kalam, sans;
+  font-family: Kalam, sans-serif;
   font-weight: lighter;
 }
 
@@ -426,7 +428,7 @@ a:hover {
                                                       }
 
                                                       #charaktere h2 {
-                                                        margin: 0.8em -4px;
+                                                        margin: 0 -4px;
                                                       }
 
 #charaktere ul {
@@ -550,11 +552,11 @@ a:hover {
   text-align: center;
   background: #955;
   color: white;
-  font-family: 'Cabin Sketch', sans;
+  font-family: 'Cabin Sketch', sans-serif;
   font-size: 2em;
   border-radius: 0.5em;
   z-index: 1;
-  box-shadow: 0 0 10px #87b8;
+  box-shadow: 0 0 10px #87b8, 0 0 20px #0004 inset;
   cursor: pointer;
   transform: rotate(-15deg);
   transition: visibility 0.3s ease, background 0.3s ease, opacity 0.3s ease;
@@ -565,13 +567,13 @@ a:hover {
 #charaktere input + label:hover {
   background: #a66;
   transform: rotate(-18deg) scale(1.02);
-  box-shadow: 0 0 20px #87b8;
+  box-shadow: 0 0 20px #87b8, 0 0 20px #0003 inset;
 }
 
 #charaktere input:checked + label {
   filter: blur(5px);
   transform: rotate(40deg) scale(0);
-  box-shadow: 0 0 10px #87b8;
+  box-shadow: 0 0 10px #87b8, 0 0 20px #0004 inset;
   opacity: 0;
   visibility: hidden;
 }
@@ -610,6 +612,7 @@ a:hover {
 
 footer {
   position: relative;
+  font-family: Lato, sans-serif;
   z-index: 3;
 }
 
@@ -622,13 +625,105 @@ footer::before {
 
 footer ul {
   margin: 0;
-  padding: 2em;
+  padding: 0 2em 2em 2em;
   background: #955;
+  list-style: none;
+  display: flex;
+  flex-flow: column wrap;
+  height: 6em;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+footer li {
+  height: 2em;
+  line-height: 2em;
+}
+
+footer li:nth-of-type(-n + 3) {
+  width: 8em;
+}
+
+footer li:nth-of-type(n + 4) {
+  width: 12em;
+  text-align: right;
 }
 
 footer a {
+  position: relative;
+  margin-left: 2em;
   color: black;
   text-decoration: none;
+}
+
+footer a:hover {
+  text-shadow: none;
+}
+
+footer a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  opacity: 0;
+  background: black;
+  margin-top: -0.3em;
+  transition: width 0.3s ease, opacity 0.3s step-end;
+}
+
+footer a:hover::after {
+  content: '';
+  width: 100%;
+  opacity: 1;
+  transition: width 0.3s ease, opacity 0.3s step-start;
+}
+
+footer li:nth-of-type(n + 4) a::after {
+  left: auto;
+  right: 0;
+}
+
+footer a::before {
+  position: absolute;
+  margin: 0.1em 0 0 -1.4em;
+  width: 1em;
+  height: 1em;
+}
+
+footer li:nth-of-type(1) a::before {
+  content: url("instagram.svg");
+}
+
+footer li:nth-of-type(2) a::before {
+  content: url("youtube.svg");
+}
+
+footer li:nth-of-type(3) a::before {
+  content: url("twitter.svg");
+}
+
+@media (max-width: 35em)
+{
+  footer ul {
+    display: block;
+    padding: 2em;
+    height: auto;
+  }
+
+  footer li:nth-of-type(n) {
+    text-align: left;
+  }
+
+  footer li:nth-of-type(n) a::after {
+    left: 0;
+    right: auto;
+  }
+
+  footer li:nth-of-type(4) {
+    margin-top: 1em;
+  }
 }
 
 
@@ -655,17 +750,16 @@ footer a {
 
 #impressum h2,
 #datenschutzerklärung h2 {
-  font-family: 'Cabin Sketch', sans;
+  font-family: 'Cabin Sketch', sans-serif;
   font-size: 1.6em;
 }
 
 #datenschutzerklärung h3,
 #datenschutzerklärung h4 {
-  font-family: 'Cabin Sketch', sans;
+  font-family: 'Cabin Sketch', sans-serif;
 }
 
 #impressum p + p {
   text-indent: 0;
   margin-top: 0.5em;
 }
-
