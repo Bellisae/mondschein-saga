@@ -371,11 +371,11 @@ p + p {
 a {
   color: #008;
   text-decoration: none;
+  transition: text-shadow 0.3s ease;
 }
 
 a:hover {
   text-shadow: 0 0 5px #88f;
-  transition: text-shadow 0.3s ease;
 }
 
 
@@ -389,6 +389,18 @@ a:hover {
 
   nav {
     padding-right: 4em;
+  }
+
+  footer::after {
+    content: '';
+    width: 4em;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -4em;
+    background: #955;
+    box-shadow: -15px 15px 10px #0008 inset;
   }
 }
 
@@ -416,7 +428,7 @@ a:hover {
   text-indent: 0;
   margin: 0.5em 0;
   font-family: Kalam, sans-serif;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 
@@ -666,22 +678,12 @@ footer a {
 
 footer a:hover {
   text-shadow: none;
-  transition: font-weight 0.3s ease;
 }
 
 @supports (font-variation-settings: "wght" 900)
 {
-  footer a {
-    animation: 2s ease fontweightfix backwards;
-  }
-
   footer a:hover {
     font-weight: 900;
-  }
-
-  @keyframes fontweightfix {
-    from { font-weight: 900 }
-    to { font-weight: 500 }
   }
 }
 
