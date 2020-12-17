@@ -153,30 +153,23 @@
 
       if (window.matchMedia("(hover: none)").matches)
         window.addEventListener("load", function() {
+          var nav = document.querySelector("nav")
+
+          var prevoffset = window.scrollY
+
           var sheet = document.styleSheets[0]
 
           sheet.deleteRule(Array.from(sheet.cssRules).findIndex(function(rule) {
             return rule.type === CSSRule.MEDIA_RULE && rule.conditionText === "(hover: none)"
           }))
 
-          var nav = document.querySelector("nav")
-
-          var height = 0
-
-          var prevoffset = window.scrollY
-
-          nav.style.transition = "opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease"
-
-          window.addEventListener("resize", function() {
-            height = 10 + nav.getBoundingClientRect().height
-          })
-
           window.addEventListener("scroll", function() {
-            if (!height)
-              height = 10 + nav.getBoundingClientRect().height
-
             var currentoffset = window.scrollY
-            nav.style.top = prevoffset > currentoffset ? "0" : "-" + height + "px"
+            nav.style.cssText = prevoffset > currentoffset
+              ? "transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease; " +
+                "top: 0"
+              : "transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease; " +
+                "top: -" + nav.getBoundingClientRect().height + "px"
             prevoffset = currentoffset;
           })
         })
