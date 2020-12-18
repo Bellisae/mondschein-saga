@@ -659,7 +659,7 @@ footer ul {
   list-style: none;
   display: flex;
   flex-flow: column wrap;
-  height: 6em;
+  height: 4em;
   justify-content: flex-end;
   align-items: flex-end;
   transition: margin 0.3s ease;
@@ -670,11 +670,11 @@ footer li {
   line-height: 2em;
 }
 
-footer li:nth-of-type(-n + 3) {
+footer li:nth-of-type(-n + 2) {
   width: 8em;
 }
 
-footer li:nth-of-type(n + 4) {
+footer li:nth-of-type(n + 3) {
   width: 13em;
   text-align: right;
 }
@@ -720,17 +720,19 @@ footer a:hover::after {
   transition: width 0.3s ease, opacity 0.3s step-start;
 }
 
-footer li:nth-of-type(n + 4) a::after {
+footer li:nth-of-type(n + 3) a::after {
   left: auto;
   right: 0;
 }
 
 footer a::before {
   position: absolute;
+  top: 0;
   margin: 0.1em 0 0 -1.4em;
   padding-right: 0.4em;
   width: 1em;
   height: 1em;
+  line-height: 1em;
   transition: transform 0.3s ease;
 }
 
@@ -744,10 +746,6 @@ footer li:nth-of-type(1) a::before {
 
 footer li:nth-of-type(2) a::before {
   content: url("youtube.svg");
-}
-
-footer li:nth-of-type(3) a::before {
-  content: url("twitter.svg");
 }
 
 @media (max-width: 35em)
@@ -767,7 +765,7 @@ footer li:nth-of-type(3) a::before {
     right: auto;
   }
 
-  footer li:nth-of-type(4) {
+  footer li:nth-of-type(3) {
     margin-top: 1em;
   }
 }
