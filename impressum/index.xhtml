@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html id ="impressum" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" lang="de" xml:lang="de">
+  <head>
+    <title>Mondschein</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#559" />
+
+    <meta name="description" content="Eine Geschichte über eine äußere und innere Reise des Erwachsenwerdens. Über die Zerbrechlichkeit dessen, was wir als sicher erachten und die Beständigkeit dessen, was wir nie erwartet hätten. Über Freundschaft, Familie, Liebe und Intrigen, die Verarbeitung von Trauer und das Durchbrechen von festgefahrenen Denkmustern." />
+
+    <meta property="og:title" content="Mondschein" />
+    <meta property="og:description" content="Eine Geschichte über eine äußere und innere Reise des Erwachsenwerdens. Über die Zerbrechlichkeit dessen, was wir als sicher erachten und die Beständigkeit dessen, was wir nie erwartet hätten. Über Freundschaft, Familie, Liebe und Intrigen, die Verarbeitung von Trauer und das Durchbrechen von festgefahrenen Denkmustern." />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content="https://mondschein-saga.de/" />
+    <meta property="og:image" content="moon-192.png" />
+
+    <link rel="canonical" href="https://mondschein-saga.de/" />
+
+    <link rel="preload" href="../resources/title.svg" as="image" />
+    <link rel="preload" href="../resources/moon.svg" as="image" />
+    <link rel="preload" href="../resources/rule.svg" as="image" />
+    <link rel="preload" href="../resources/silver.png" as="image" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="../resources/style.css" />
+
+    <link rel="apple-touch-icon" sizes="192x192" href="../resources/moon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../resources/moon-180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="../resources/moon-167.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../resources/moon-152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../resources/moon-144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../resources/moon-120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../resources/moon-114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../resources/moon-76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../resources/moon-72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../resources/moon-60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../resources/moon-57.png" />
+    <link rel="icon" sizes="192x192" href="../resources/moon-192.png" />
+    <link rel="icon" sizes="128x128" href="../resources/moon-128.png" />
+    <link rel="icon" sizes="96x96" href="../resources/moon-96.png" />
+    <link rel="icon" sizes="64x64" href="../resources/moon-64.png" />
+    <link rel="icon" sizes="48x48" href="../resources/moon-48.png" />
+    <link rel="icon" sizes="32x32" href="../resources/moon-32.png" />
+    <link rel="icon" sizes="16x16" href="../resources/moon-16.png" />
+
+    <script type="text/javascript">
+    //<![CDATA[
+      if (window.matchMedia("(hover: none)").matches)
+        window.addEventListener("load", function() {
+          var nav = document.querySelector("nav")
+
+          var prevoffset = window.scrollY
+
+          var sheet = document.styleSheets[0]
+
+          sheet.deleteRule(Array.from(sheet.cssRules).findIndex(function(rule) {
+            return rule.type === CSSRule.MEDIA_RULE && rule.conditionText === "(hover: none)"
+          }))
+
+          window.addEventListener("scroll", function() {
+            var currentoffset = window.scrollY
+            nav.style.cssText = prevoffset > currentoffset
+              ? "transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease; " +
+                "top: 0"
+              : "transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease; " +
+                "top: -" + nav.getBoundingClientRect().height + "px"
+            prevoffset = currentoffset;
+          })
+        })
+    //]]>
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Mondschein</h1>
+    </header>
+    <nav class="menu">
+      <ol>
+        <li><a href="../">Hauptseite</a></li>
+      </ol>
+    </nav>
+    <main>
+      <h2>Impressum</h2>
+      <p>Bellisae<br/>
+      c/o Werneburg Internet Marketing und Publikations-Service<br/>
+      Philipp-Kühner-Straße 2<br/>
+      99817 Eisenach </p>
+      <p>E-Mail: bellisae@mondschein-saga.de</p>
+      <p>Verantwortlich für Telemedien nach § 5 TMG/gemäß § 55 RStV: Bellisae</p>
+    </main>
+    <footer>
+      <ul>
+        <li><a href="https://instagram.com/mondschein_saga/">Instagram</a></li>
+        <li><a href="https://youtube.com/channel/UChX4i0RpFIiNJLc2yZ0nTPA">YouTube</a></li>
+        <li><a href="../datenschutzerklärung/">Datenschutzerklärung</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
