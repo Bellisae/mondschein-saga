@@ -41,15 +41,17 @@ head meta:nth-of-type(1), head meta:nth-of-type(2) {
   right: -320px;
   z-index: 2;
   transition: opacity 2s ease, margin-left 0.8s ease;
-  animation: 5s ease silverfadein backwards;
 }
 
 head meta:nth-of-type(1) {
   background: url('silver.png') center/100%;
+  animation: 5s ease silverfadein backwards;
+  filter: drop-shadow(0 0 5px #000a);
 }
 
 head meta:nth-of-type(2) {
   background: url('silver-moon-eyes.png') center/100%;
+  animation: 5s ease silvemooneyesfadein backwards;
   opacity: 0;
 }
 
@@ -208,6 +210,11 @@ h1:hover::after {
 }
 
 @keyframes silverfadein {
+  from { filter: drop-shadow(0 0 5px #000a) brightness(0) }
+  to { filter: drop-shadow(0 0 5px #000a) brightness(1) }
+}
+
+@keyframes silvemooneyesfadein {
   from { filter: brightness(0) }
   to { filter: brightness(1) }
 }
