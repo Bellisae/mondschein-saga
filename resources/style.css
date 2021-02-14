@@ -44,13 +44,13 @@ head meta:nth-of-type(1), head meta:nth-of-type(2) {
 }
 
 head meta:nth-of-type(1) {
-  background: url('silver.png') center/100%;
+  background: url(silver.png) center/100%;
   animation: 5s ease silverfadein backwards;
   filter: drop-shadow(0 0 5px #000a);
 }
 
 head meta:nth-of-type(2) {
-  background: url('silver-moon-eyes.png') center/100%;
+  background: url(silver-moon-eyes.png) center/100%;
   animation: 5s ease silvemooneyesfadein backwards;
   opacity: 0;
 }
@@ -452,6 +452,14 @@ a:hover {
 }
 
 
+/**** about ****/
+
+#autorin p {
+  text-indent: 0;
+  margin-top: 0.5em;
+}
+
+
 /**** characters ****/
 
                                                       #charaktere {
@@ -748,11 +756,11 @@ footer a:hover::before {
 }
 
 footer li:nth-of-type(1) a::before {
-  content: url("instagram.svg");
+  content: url(instagram.svg);
 }
 
 footer li:nth-of-type(2) a::before {
-  content: url("youtube.svg");
+  content: url(youtube.svg);
 }
 
 @media (max-width: 35em)
