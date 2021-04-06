@@ -648,6 +648,111 @@ a:hover {
 }
 
 
+/**** extract ****/
+
+#leseprobe p {
+  position: relative;
+  height: 400px;
+  z-index: 1;
+}
+
+#leseprobe a {
+  display: block;
+  position: relative;
+  padding-top: 100px;
+  height: 300px;
+  color: transparent;
+  text-shadow: none;
+  z-index: 2;
+}
+
+#leseprobe a::before,
+#leseprobe a::after,
+#leseprobe abbr::before,
+#leseprobe abbr::after,
+#leseprobe p::before,
+#leseprobe p::after  {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 229px;
+  height: 355px;
+  border-radius: 4px;
+  background: no-repeat center/100%;
+  box-shadow: 1px 1px 7px #64724d inset;
+  transform: perspective(300px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+#leseprobe a::before {
+  z-index: 6;
+  background-image: url(extract-1.png);
+  border-radius: 0;
+  box-shadow: 1px 1px 11px #64728d, 1px 1px 7px #64724d inset;
+}
+
+#leseprobe a::after {
+  z-index: 5;
+  background-image: url(extract-2.png);
+}
+
+#leseprobe abbr::before {
+  z-index: 4;
+  background-image: url(extract-3.png);
+}
+
+#leseprobe abbr::after {
+  z-index: 3;
+  background-image: url(extract-4.png);
+}
+
+#leseprobe p::before {
+  z-index: 2;
+  background-image: url(extract-5.png);
+}
+
+#leseprobe p::after {
+  z-index: 1;
+  background-image: url(extract-6.png);
+}
+
+#leseprobe p:hover a::before,
+#leseprobe p:hover a::after,
+#leseprobe p:hover abbr::before,
+#leseprobe p:hover abbr::after,
+#leseprobe p:hover::before,
+#leseprobe p:hover::after {
+  border-radius: 4px;
+  box-shadow: 1px 1px 11px #64728d, 1px 1px 7px #64724d inset;
+}
+
+#leseprobe p:hover a::before {
+  transform: perspective(300px) rotate3d(0, 1, -1, 10deg);
+}
+
+#leseprobe p:hover a::after {
+  transform: perspective(300px) translate(30px) rotate3d(0, 1, -1, 5deg);
+}
+
+#leseprobe p:hover abbr::before {
+  transform: perspective(300px) translate(60px) rotate3d(0, 1, -1, 0);
+}
+
+#leseprobe p:hover abbr::after {
+  transform: perspective(300px) translate(90px) rotate3d(0, 1, -1, -5deg);
+}
+
+#leseprobe p:hover::before {
+  transform: perspective(300px) translate(120px) rotate3d(0, 1, -1, -10deg);
+}
+
+#leseprobe p:hover::after {
+  transform: perspective(300px) translate(150px) rotate3d(0, 1, -1, -15deg);
+}
+
+
 /**** footer ****/
 
 footer ::selection {
