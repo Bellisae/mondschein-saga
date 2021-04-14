@@ -652,7 +652,7 @@ a:hover {
 
 #leseprobe p {
   position: relative;
-  height: 400px;
+  height: 366px;
   z-index: 1;
 }
 
@@ -660,7 +660,7 @@ a:hover {
   display: block;
   position: relative;
   padding-top: 100px;
-  height: 300px;
+  height: 266px;
   color: transparent;
   text-shadow: none;
   z-index: 2;
