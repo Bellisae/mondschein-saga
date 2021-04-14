@@ -46,6 +46,42 @@
     <script type="text/javascript">
     //<![CDATA[
       window.addEventListener("load", function() {
+        var sheet = document.styleSheets[0]
+
+        var rules = sheet.cssRules
+
+        sheet.insertRule(
+          "@keyframes loadingbar {" +
+          "  from { width: 0% }" +
+          "  to { width: 100% }" +
+          "}", rules.length)
+
+        sheet.insertRule(
+          "#buchtrailer a::before {" +
+          "  content: '';" +
+          "  position: absolute;" +
+          "  top: 0;" +
+          "  left: 0;" +
+          "  width: 0;" +
+          "  height: 1px;" +
+          "  background: blue;" +
+          "  animation: 3s ease loadingbar forwards;" +
+          "}", rules.length)
+
+        setTimeout(function() {
+          var booktrailer = document.querySelector("#buchtrailer p")
+
+          booktrailer.innerHTML =
+            '<iframe width="560" height="315" ' +
+            'src="https://www.youtube-nocookie.com/embed/i8z3GWqQtSo" ' +
+            'title="YouTube video player: Mondschein – Der Lauf der Füchsin BUCHTRAILER" ' +
+            'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen">' +
+            booktrailer.innerHTML +
+            '</iframe>'
+        }, 3000)
+      })
+
+      window.addEventListener("load", function() {
         var previmg = null
 
         var query = "(hover: hover) and (min-width: 35em)"
@@ -184,6 +220,7 @@
     <nav class="menu">
       <ol>
         <li><a href="#inhalt">Worum geht’s?</a></li>
+        <li><a href="#buchtrailer">Buchtrailer</a></li>
         <li><a href="#charaktere">Charaktere</a></li>
         <li><a href="#leseprobe">Leseprobe</a></li>
         <li><a href="#autorin">Über die Autorin</a></li>
@@ -205,6 +242,10 @@
         unbekümmerten Leben mit ihrer Familie ändern könnte,
         bis ihre Welt durch ein traumatisches Ereignis
         aus den Fugen gerät.</p>
+      </section>
+      <section id="buchtrailer">
+        <h2>Buchtrailer</h2>
+        <p><a href="https://youtube.com/watch?v=i8z3GWqQtSo">YouTube video: Mondschein – Der Lauf der Füchsin BUCHTRAILER</a></p>
       </section>
       <section id="charaktere">
         <h2>Charaktere</h2>
