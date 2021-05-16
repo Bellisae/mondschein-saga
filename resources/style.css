@@ -319,6 +319,10 @@ nav li {
   display: inline;
 }
 
+nav li:first-child {
+  display: none;
+}
+
 nav li a {
   display: inline-block;
   color: black;
@@ -436,6 +440,70 @@ a:hover {
 {
   head meta:nth-of-type(1), head meta:nth-of-type(2) {
     margin-left: 17em;
+  }
+}
+
+
+/**** order ****/
+
+#bestellung h2 {
+  display: none;
+}
+
+#bestellung p {
+  text-align: center;
+  animation: 2s ease fadein backwards;
+}
+
+#bestellung a {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  width: 8.65em;
+  height: 12.1em;
+  padding-top: 2em;
+}
+
+#bestellung a::before,
+#bestellung a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8.65em;
+  height: 14.1em;
+  filter: drop-shadow(0 0 5px #000a);
+  transform-origin: left;
+  transform: perspective(1000px);
+  transition: transform 0.3s ease;
+}
+
+#bestellung a::before {
+  background: url(book-open.png) no-repeat;
+  background-size: contain;
+}
+
+#bestellung a::after {
+  background: url(book-cover.png) no-repeat;
+  background-size: contain;
+}
+
+#bestellung a:hover::before {
+  transform: perspective(1000px) scale(1.03) translate(-0.2em, 0.2em) rotateX(10deg) rotateZ(-1deg) rotateY(-10deg);
+}
+
+#bestellung a:hover::after {
+  transform: perspective(1000px) scale(1.03) translate(-0.2em, 0.2em) rotateX(10deg) rotateZ(-1deg) rotateY(-40deg);
+}
+
+@media (min-width: 70em) {
+  #bestellung p {
+    position: absolute;
+    width: 8.65em;
+    left: -10em;
+    left: -15vw;
+    margin-top: -20em;
   }
 }
 
