@@ -446,25 +446,70 @@ a:hover {
 
 /**** order ****/
 
+#bestellung {
+  padding-left: 15%;
+  transition: padding 0.5s ease;
+}
+
 #bestellung h2 {
   display: none;
 }
 
 #bestellung p {
-  text-align: center;
+  position: relative;
+  margin: auto;
+  width: 14.65em;
+  font-family: "Libre Franklin", sans-serif;
   animation: 2s ease fadein backwards;
 }
 
 #bestellung a {
   position: relative;
-  display: inline-block;
+  display: block;
   color: transparent;
-  width: 8.65em;
-  height: 12.1em;
-  padding-top: 2em;
+  padding: 3em 9em 0 0;
+  height: 11.1em;
+  width: 5.65em;
+  z-index: 1;
 }
 
-#bestellung a::before,
+#bestellung p::after,
+#bestellung a::before {
+  content: 'Online bestellen';
+  position: relative;
+  display: block;
+  color: #008;
+  background: #77d;
+  width: 4.65em;
+  border-radius: 1em;
+  box-shadow: 0 0 10px #0004, 0 0 20px #0004 inset;
+  transition: margin 0.5s ease, padding 0.5s ease;
+}
+
+#bestellung p::after {
+  padding: 1.5em 0.5em 1.5em 3em;
+  margin: -10em 0 4.5em 6em;
+}
+
+#bestellung a::before {
+  padding: 1.5em 0.5em 1.5em 0;
+  margin-left: 1em;
+  transform-origin: left;
+  transform: perspective(1000px) scale(1.03) translate(-0.2em, 0.2em) rotateX(10deg) rotateZ(-1deg) rotateY(-10deg);
+  transition: margin 0.5s ease, padding 0.5s ease;
+}
+
+#bestellung p:hover::after {
+  margin-left: 1em;
+  padding-left: 0;
+}
+  
+#bestellung a:hover::before {
+  margin-left: 5em;
+  padding-left: 3em;
+}
+
+#bestellung p::before,
 #bestellung a::after {
   content: '';
   display: block;
@@ -477,19 +522,20 @@ a:hover {
   transform-origin: left;
   transform: perspective(1000px);
   transition: transform 0.3s ease;
+  z-index: 1;
 }
 
-#bestellung a::before {
+#bestellung p::before {
   background: url(book-open.png) no-repeat;
   background-size: contain;
 }
 
-#bestellung a::after {
+#bestellung a::after {  
   background: url(book-cover.png) no-repeat;
   background-size: contain;
 }
 
-#bestellung a:hover::before {
+#bestellung p:hover::before {
   transform: perspective(1000px) scale(1.03) translate(-0.2em, 0.2em) rotateX(10deg) rotateZ(-1deg) rotateY(-10deg);
 }
 
@@ -500,10 +546,15 @@ a:hover {
 @media (min-width: 70em) {
   #bestellung p {
     position: absolute;
-    width: 8.65em;
-    left: -10em;
-    left: -15vw;
+    left: -10.5em;
+    left: -17vw;
     margin-top: -20em;
+  }
+}
+
+@media (max-width: 25em) {
+  #bestellung {
+    padding-left: 0;
   }
 }
 
